@@ -9,7 +9,7 @@ This is a Theme Worpress compatible with vue.js
 2. Vuex
 3. Webpack ready
 4. Loop Wordpress in js
-5. Plugin that add Global function loop worpdress in js
+5. Vue js Global function loop worpdress
 
 ## Getting Started
 
@@ -63,6 +63,11 @@ reloadDelay: 0
 
 This theme came with a plugin that works look like the worpdress loop.
 Of couser still is not at the same level but with this you can get every data of the Wp Rest Api in any componet child of your project.
+
+You can use the loop without vue.js too, just get the file in wp-rest folder and include the file GetPosts.js in your progect. It is pure js so will work in the most of projects
+
+But remenber to change  the variable 'siteName' of the file because if you don't get the data with the wordpress files you can't get the loop to worck, just change to 'http://yoursitename//wp-json/wp/v2/' and should resolve this issue.
+
 
 this is the global function to use the plugin:
 ...
