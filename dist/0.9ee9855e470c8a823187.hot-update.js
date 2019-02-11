@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{13:function(t,e,o){"use strict";o.r(e);var n=o(2),c=o(11),f=o(22);n.default.config.devtools=!0,new n.default({el:"#app",render:function(t){return t(c.a)},components:{WpConfig:f.default},method:{fetchPosts:function(){console.log("it Works")}},created:function(){this.fetchPosts()}})}});

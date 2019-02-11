@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{8:function(t,o,e){"use strict";var a=e(16),i=e(17),n={name:"App",components:{Header:a.a,Todos:i.a},data:function(){return{title:this.$store.state.title,todos:[{id:1,title:"Todo 1",completed:!1}]}},methods:{onclick:function(){this.$GlobalMethod()}}};o.a=n}});

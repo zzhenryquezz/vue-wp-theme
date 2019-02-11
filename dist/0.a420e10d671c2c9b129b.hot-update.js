@@ -1,0 +1,1 @@
+webpackHotUpdate(0,[function(t,e,r){"use strict";r.r(e);var n=function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"container",attrs:{id:"app"}},[e("Header"),this._v(" "),e("Todos",{attrs:{todos:this.todos}})],1)},s=[];n._withStripped=!0,r.d(e,"render",function(){return n}),r.d(e,"staticRenderFns",function(){return s})}]);

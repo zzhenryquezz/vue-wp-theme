@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{8:function(t,e,o){"use strict";var s=o(16),a=o(17),i={name:"App",components:{Header:s.a,Todos:a.a},data:function(){return{title:this.$store.state.title,todos:[{id:1,title:"Todo 1",completed:!1}]}},methods:{},created:function(){this.$WpConfig.mehods.showPluginTest()}};e.a=i}});

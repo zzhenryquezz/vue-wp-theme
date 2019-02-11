@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{24:function(t,e,n){"use strict";n.r(e);var a=n(0),o=n(15),r=n(3);a.default.config.devtools=!0,a.default.use(r.a);var u=new r.a.Store({state:{title:"My ticle"},mutations:{increment:function(t){return t.count++}}});a.default.config.devtools=!0,new a.default({el:"#app",store:u,render:function(t){return t(o.a)}})}});

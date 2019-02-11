@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{24:function(t,e,n){"use strict";n.r(e);var u=n(0),r=n(15),o=new Vuex.Store({state:{count:0},mutations:{increment:function(t){return t.count++},decrement:function(t){return t.count--}}}),c=n(18);u.default.config.devtools=!0,u.default.use(c.a),new u.default({el:"#app",store:o,render:function(t){return t(r.a)}})}});

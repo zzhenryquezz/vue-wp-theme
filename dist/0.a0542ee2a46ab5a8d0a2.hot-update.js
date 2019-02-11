@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{9:function(n,o,e){"use strict";var i={name:"WpConfig",install:function(n,o){console.log("vue plugin"),Vue.showPlugin=function(){console.log("plugin method")}}};o.a=i}});

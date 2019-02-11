@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{7:function(t,o,e){"use strict";var n={components:{Header:e(14).a},data:function(){return{}},methods:{fetchPosts:function(){console.log("it Works")},created:function(){this.fetchPosts(),console.log("it Works")}}};o.a=n}});

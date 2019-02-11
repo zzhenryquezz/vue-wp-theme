@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{8:function(o,t,e){"use strict";var d=e(16),c=e(17),n={name:"App",components:{Header:d.a,Todos:c.a},data:function(){return{todos:[{id:1,title:"Todo 1",completed:!1},{id:2,title:"Todo 2",completed:!1},{id:3,title:"Todo 3",completed:!1}]}},methods:{fetchPosts:function(){console.log("it Works")}},created:function(){console.log("it Works")}};t.a=n}});

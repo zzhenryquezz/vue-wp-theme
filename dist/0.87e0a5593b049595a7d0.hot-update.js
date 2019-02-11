@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{21:function(t,o){t.exports={data:function(){return{message:"hello"}},method:{fetchPosts:function(){console.log("it Works")}},created:function(){this.fetchPosts()}}}});

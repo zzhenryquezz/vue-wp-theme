@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{19:function(e,t,a){"use strict";a.r(t);var u=a(0),n=a(15),d=a(18);u.default.config.devtools=!0,u.default.use(d.a),u.default.showPluginTest(),new u.default({el:"#app",render:function(e){return e(n.a)}})}});

@@ -1,0 +1,1 @@
+webpackHotUpdate(0,[,function(t,e,n){"use strict";n.r(e);var r=function(){var t=this.$createElement;this._self._c;return this._m(0)},i=[function(){var t=this.$createElement,e=this._self._c||t;return e("div",[e("button",{attrs:{id:"btn"}},[this._v("Increent")])])}];r._withStripped=!0,n.d(e,"render",function(){return r}),n.d(e,"staticRenderFns",function(){return i})}]);

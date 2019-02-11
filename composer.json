@@ -1,0 +1,18 @@
+{
+  "name": "henrique-trabalho/francois-culinary-plugin",
+  "description": "Plugin of the francois culinary theme",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Henrique de Oliveira",
+      "email": "henrique@htron-dev.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "WP_Vue_Theme\\": "./includes"
+    }
+  }
+}

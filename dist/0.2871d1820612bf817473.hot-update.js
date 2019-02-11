@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{24:function(t,o,n){"use strict";var e={name:"WpConfig",methods:{fetchPosts:function(){var t=fetch("/wp-json/wp/v2/posts").then(function(t){return t.json()});console.log(t)}},beforeMount:function(){this.fetchPosts()}};o.a=e}});

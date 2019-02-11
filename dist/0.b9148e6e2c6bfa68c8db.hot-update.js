@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{21:function(t,e){new Vue({data:{},methods:{fetchPosts:function(){fetch("/wp-json/v2/posts")}},created:function(){this.fetch}})}});

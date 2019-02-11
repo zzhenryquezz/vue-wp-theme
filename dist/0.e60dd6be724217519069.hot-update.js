@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{24:function(t,o,e){"use strict";var n={name:"WpConfig",methods:{fetchPosts:function(){console.log("it Works")}},beforeMount:function(){this.fetchPosts()}};o.a=n}});

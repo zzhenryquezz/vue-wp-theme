@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{9:function(n,o,t){"use strict";var i={name:"WpConfig",install:function(n,o){n.showPluginTest=function(){console.log("plugin method")}}};o.a=i}});

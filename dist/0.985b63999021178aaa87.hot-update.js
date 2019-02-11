@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{6:function(a,t,e){"use strict";var n={name:"App",components:{Header:e(14).a},data:function(){return{}}};t.a=n}});

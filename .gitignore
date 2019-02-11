@@ -1,0 +1,4 @@
+node_modules
+vendor
+.directory
+package-lock.json

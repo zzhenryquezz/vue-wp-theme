@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{16:function(e,t,n){"use strict";n.r(t);var a=n(2),r=n(13);a.default.config.devtools=!0,new a.default({el:"#app",render:function(e){return e(r.a)}})}});

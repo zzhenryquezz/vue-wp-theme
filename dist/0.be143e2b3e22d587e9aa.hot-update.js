@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{9:function(t,n,o){"use strict";var e={state:{},mutations:{},getters:{ShowWpPlugin:function(t){console.log("Wp PLugin")}}};n.a=e}});

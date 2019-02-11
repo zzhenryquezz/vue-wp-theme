@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{4:function(t,e,a){"use strict";var o={name:"App",components:{Header:a(12).a},data:function(){return{}},created:function(){var t=this.$Get_Posts({route:"posts",filters:{per_page:5}});console.log(t)}};e.a=o}});

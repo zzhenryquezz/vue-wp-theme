@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{7:function(t,e,a){"use strict";e.a={data:function(){return{title:this.$store.state.SiteData.siteName}}}}});
