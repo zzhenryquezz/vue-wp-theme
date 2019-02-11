@@ -2,7 +2,7 @@
 
 This is a Theme Worpress compatible with vue.js
 
-**Importatn: Still in beta.**
+**Important:** Still in beta.
 ## Featureds
 
 1. Vue.js
@@ -71,13 +71,25 @@ You can use the loop without vue.js too, just get the file in wp-rest folder and
 But remenber to change  the variable 'siteName' of the file because if you don't get the data with the wordpress files you can't get the loop to worck, just change to 'http://yoursitename//wp-json/wp/v2/' and should resolve this issue.
 
 
-this is the global function to use the plugin:
+Functions of Aplication:
 
-`this.\$Get_Posts(args)`
+### Plugin vue:
+* `this.$Get_Posts(args)`
+* `this.$Get_Thubnail(post)`
 
-# Examples of use the Loop:
+### Js Usage, remember to import the files.
 
-1 - Default Use
+* `GetPosts(args)`
+* `GetThubnail(post)`
+
+### Notes:
+
+> The GetThubnail function must be used inside of a loop or with just one post object JSON
+
+## Examples of usage:
+
+### Loop of Posts
+1. Default Use
 ```
 function myCustomDeafultLoop(){
     let args = {
@@ -97,8 +109,7 @@ function myCustomDeafultLoop(){
 
 
 
-2 - Using custom Endpoint:
-
+2. Using custom Endpoint:
 ```     
 function myCustomEndpoint(){
     let args = {}
@@ -108,17 +119,55 @@ function myCustomEndpoint(){
     <!-- see the results in consol -->
     console.log(posts);
 };
-
-
-}
-}
 ```     
 
-## Args
+### Get Thumbnail Funcion
+
+1 - Code, Examples used a .vue file
+
+```
+<template>
+  <main class="container">
+    <h2 class="">Main Home Page</h2>
+    <div class="entry-posts">
+      <article class="pd-2 post row" v-for="post in posts" v-bind:key="post.id" >
+        <h2 class="col-12">{{ post.title.rendered }}</h2>
+        <div class="entry-Thumbnail col-4">
+          <img class="background-image" v-bind:src="$Get_Thubnail(post)">
+        </div>
+        <p>{{ post.excerpt.rendered.replace(/<\/?[^>]+>/gi, '') }}</p>
+      </article>
+    </div>
+  </main>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      posts: []
+    };
+  },
+  methods:{},
+  created: function(){
+    let args = {
+      route: 'posts',
+      filters:{
+        per_page: 3
+      }
+    };
+    this.posts = this.$Get_Posts(args);
+  }
+};
+</script>
+
+```
+
+## Loop Args
 
 Parameter     | Value
 ------------- | -------------
-route         | **string:** First parameter of endpost: __default:__ posts[See All Parameter Routes](http://www.google.fr/)
+route         | **string:** First parameter of endpost: __default:__ posts - [See All Parameter Routes](http://www.google.fr/)
 per_Page      | **int:** Number of Posts to receve
 
 ## EndPoint
@@ -153,7 +202,9 @@ If you have some idea to make better some functionality of the theme or wanna ma
 
 ## Versioning
 
-* Version 1.0.0
+* Version 1.0.1 - add $Get_Thubnail function
+
+  * Version 1.0.0 - release
 
 ## Authors
 
@@ -161,7 +212,7 @@ If you have some idea to make better some functionality of the theme or wanna ma
 
 ## License
 
-This project is licensed under the GPL License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GPL License - see the [LICENSE.md](/LICENSE.md) file for details
 
 ## Acknowledgments
 

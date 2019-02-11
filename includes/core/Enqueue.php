@@ -18,9 +18,10 @@ class Enqueue
   public function register(){
     wp_register_script('app-js', get_template_directory_uri() . '/dist/main.js', array(), '1.0.0', true);
     
-    wp_localize_script('app-js', 'DataSite', array(
-      'siteName' => (string)get_site_url(),
-      'Hello' => 'Word'
+    wp_localize_script('app-js', 'wpDataSite', array(
+      'siteUrl' => (string)get_site_url(),
+      'siteName' => (string)get_bloginfo('name'),
+      'siteDescription' => (string)get_bloginfo('description'),
     ));
   }
 }

@@ -8,11 +8,10 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    
+
 <div id="app">
 
 </div>
-
 
 <footer>
 <?php wp_footer(); ?>

@@ -2,10 +2,12 @@
 
 const Config = {
   state: {
-    siteName: DataSite.siteName
+    siteUrl:         wpDataSite.siteUrl,
+    siteName:        wpDataSite.siteName,
+    siteDescription: wpDataSite.siteDescription,
   },
-  get_EndPoint: function() {
-    return this.state.siteName + "/wp-json/wp/v2/";
+  get_EndPoint: function () {
+    return this.state.siteUrl + "/wp-json/wp/v2/";
   }
 };
 

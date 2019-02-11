@@ -7,33 +7,45 @@ const GetPosts = (args = { route: "posts", filters: {} }, endline = "") => {
   let filters_slug = "";
   let posts = [];
 
+  /**
+  * Filter the Posts
+  */
   for (let arg in filters) {
     if (filters.hasOwnProperty(arg)) {
-      if (arg == "per_page") {
+      if (arg == "per_page" && typeof filters[arg] == 'number' ) {
         filters_slug += "?per_page=";
         filters_slug += filters[arg];
+      }else {
+        console.error("Wp-loop: Wrong args in Loop");
       }
+
+    /**
+    * Set Order of Posts asc or desc
+    */
+
       if (arg == "order") {
         if (filters[arg] === "desc" || filters[arg] === "asc") {
           filters_slug += "?order=";
           filters_slug += filters[arg];
         } else {
-          console.error("Wrong args in Loop");
+          console.error("Wp-loop: Wrong args in Loop");
         }
       }
+
+      /**
+      * Orderby arguments
+      * you can see all valid values in the oficial documentation of Wp-rest-api
+      */
 
       if (arg == "orderby") {
         filters_slug += "?orderby=";
         filters_slug += filters[arg];
       }
-      console.log(arg + " -> " + args[arg]);
     }
   }
-  console.log(filters_slug);
 
   let endPoint = siteName + args.route + endline + filters_slug;
 
-  console.log(endPoint);
   /**
    * Filter the Posts with the args
    */

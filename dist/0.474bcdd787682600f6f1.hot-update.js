@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{25:function(t,e,i){"use strict";var n=i(21),a={data:function(){return{posts:[]}},computed:Object(n.b)({title:function(t){return t.SiteData.siteName},description:function(t){return t.SiteData.siteDescription}}),created:function(){}};e.a=a}});

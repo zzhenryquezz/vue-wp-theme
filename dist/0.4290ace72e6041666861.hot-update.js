@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{7:function(t,e,i){"use strict";var a=i(21),s={data:function(){return{title:this.$store.state.SiteData.siteName,description:this.$store.state.SiteData.siteDescription}},computed:Object(a.b)({title2:function(t){return t.SiteData.siteName}})};e.a=s}});
