@@ -23,7 +23,6 @@ What things you need to install the software and how to install them
 
 ```
 npm i -g browersync
-
 ```
 
 ### Installing
@@ -32,7 +31,6 @@ npm i -g browersync
 
 ```
 git clone git@github.com:zzhenryquezz/vue-wp-theme.git
-
 ```
 
 1 - run the npm install and the composer install in root of your project.
@@ -46,16 +44,22 @@ componser install
 ```
 
 2 - Open the webpack.config.js and change the host to your virtual host domail or directory.
-`new BrowserSyncPlugin({
+
+```                
+new BrowserSyncPlugin({
 open: "external",
 host: "local.warrior",
 files: ["**/*.php", "src/**/**/.vue", "assets/css/*.css"],
 proxy: "local.warrior",
 reloadDelay: 0
-})`
-
+})
+```
 
 3 - Run npm start and test to see if is runing ok.
+```
+npm start
+```
+
 
 # Loop of Posts
 
@@ -74,7 +78,8 @@ this is the global function to use the plugin:
 # Examples of use the Loop:
 
 1 - Default Use
-`function myCustomDeafultLoop(){
+```
+function myCustomDeafultLoop(){
     let args = {
         route: "posts",
         filters: {
@@ -83,43 +88,44 @@ this is the global function to use the plugin:
     }
     let posts = this.$Get_Posts(args);
 
-see the results in console
-console.log(posts);
-};
-    `
+    <!-- see the results in console -->
+    console.log(posts);
+    };
+}
+```
 
 
-}
-}
+
 
 2 - Using custom Endpoint:
 
-`function myCustomEndpoint(){
+```     
+function myCustomEndpoint(){
     let args = {}
     let endipoint = '';
     let posts = this.$Get_Posts(args, endipoint);
 
-    //see the results in consol
+    <!-- see the results in consol -->
     console.log(posts);
 };
 
 
 }
 }
-`
+```     
 
 ## Args
 
 Parameter     | Value
 ------------- | -------------
-route         | **string:** First parameter of endpost: posts,page,pages,catgories,media,etc... [All Parameter Routes](http://www.google.fr/)
+route         | **string:** First parameter of endpost: __default:__ posts[See All Parameter Routes](http://www.google.fr/)
 per_Page      | **int:** Number of Posts to receve
 
 ## EndPoint
 This is how is moutend the endPoint of $GetPosts Loop
-
+```
 let endPoint = http://siteName/wp-json/v2/ + route + endline + filters;
-
+```
 So if you wnat you can ignore the filter and routes and use just the endline.
 
 The siteName json is get automaticly by the wp_localize_script();
@@ -131,8 +137,8 @@ This a very early version and still have not complete and came have some bugs, b
 
 ## Deployment
 
-    * version 1.0.0
-        * Still nothing
+* version 1.0.0
+    * Still nothing
 
 ## Build With
 
