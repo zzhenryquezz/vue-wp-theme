@@ -31,7 +31,7 @@ npm i -g browersync
 1 - Clone or download the repository in your machine.
 
 ```
-git clone #
+git clone git@github.com:zzhenryquezz/vue-wp-theme.git
 
 ```
 
@@ -39,7 +39,6 @@ git clone #
 
 ```
 npm install
-
 ```
 
 ```
@@ -47,15 +46,14 @@ componser install
 ```
 
 2 - Open the webpack.config.js and change the host to your virtual host domail or directory.
-...
-new BrowserSyncPlugin({
+`new BrowserSyncPlugin({
 open: "external",
 host: "local.warrior",
 files: ["**/*.php", "src/**/**/.vue", "assets/css/*.css"],
 proxy: "local.warrior",
 reloadDelay: 0
-})
-...
+})`
+
 
 3 - Run npm start and test to see if is runing ok.
 
@@ -70,15 +68,13 @@ But remenber to change  the variable 'siteName' of the file because if you don't
 
 
 this is the global function to use the plugin:
-...
-this.\$Get_Posts(args)
-...
+
+`this.\$Get_Posts(args)`
+
 # Examples of use the Loop:
 
 1 - Default Use
-...
-
-function myCustomDeafultLoop(){
+`function myCustomDeafultLoop(){
     let args = {
         route: "posts",
         filters: {
@@ -87,20 +83,18 @@ function myCustomDeafultLoop(){
     }
     let posts = this.$Get_Posts(args);
 
-    //see the results in console
-    console.log(posts);
+see the results in console
+console.log(posts);
 };
+    `
 
 
 }
 }
-
-...
 
 2 - Using custom Endpoint:
-...
 
-function myCustomEndpoint(){
+`function myCustomEndpoint(){
     let args = {}
     let endipoint = '';
     let posts = this.$Get_Posts(args, endipoint);
@@ -112,7 +106,7 @@ function myCustomEndpoint(){
 
 }
 }
-...
+`
 
 ## Args
 
@@ -121,8 +115,8 @@ Parameter     | Value
 route         | **string:** First parameter of endpost: posts,page,pages,catgories,media,etc... [All Parameter Routes](http://www.google.fr/)
 per_Page      | **int:** Number of Posts to receve
 
-## EndiPoint
-This how is a exmable of how is moutend the endPoint of $GetPosts Loop
+## EndPoint
+This is how is moutend the endPoint of $GetPosts Loop
 
 let endPoint = http://siteName/wp-json/v2/ + route + endline + filters;
 
@@ -140,7 +134,7 @@ This a very early version and still have not complete and came have some bugs, b
     * version 1.0.0
         * Still nothing
 
-## Built With
+## Build With
 
 - [Vue.js](https://vuejs.org/) - Vue Framework
 - [Vuex](https://vuex.vuejs.org/) - Vuex to Mange the Store
