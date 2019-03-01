@@ -1,14 +1,19 @@
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
-import Wpconfig from "./wp-rest/WpConfig";
+import Wp_rest_loop from "./wp-rest-loop/Wp-rest-loop";
 
 Vue.config.devtools = true;
-Vue.use(Wpconfig);
+
+/**
+* Vue Use the WP-rest-loop Plugin in root js
+*/
+
+Vue.use(Wp_rest_loop);
 
 new Vue({
   el: "#app",
   store,
-  Wpconfig,
+  Wp_rest_loop,
   render: h => h(App)
 });

@@ -1,8 +1,9 @@
 const SiteData = {
   state: {
-    siteUrl:         wpDataSite.siteUrl,
-    siteName:        wpDataSite.siteName,
-    siteDescription: wpDataSite.siteDescription,
+    siteName:           wpDataSite.siteName,
+    siteDescription:    wpDataSite.siteDescription,
+    siteUrl:            wpDataSite.siteUrl,
+    themeEndPoint:      wpDataSite.themeEndPoint,
   }
 };
 export default SiteData;

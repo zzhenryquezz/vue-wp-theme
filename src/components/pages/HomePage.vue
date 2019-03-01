@@ -1,11 +1,10 @@
 <template>
   <main class="container">
-    <h2 class="">Main Home Page</h2>
     <div class="entry-posts">
       <article class="pd-2 post row" v-for="post in posts" v-bind:key="post.id" >
         <h2 class="col-12">{{ post.title.rendered }}</h2>
         <div class="entry-Thumbnail col-4">
-          <img class="background-image" v-bind:src="$Get_Thubnail(post)" alt="">
+          <img class="background-image" v-bind:src="$get_thumbnail(post)" alt="">
         </div>
         <p>{{ post.excerpt.rendered.replace(/<\/?[^>]+>/gi, '') }}</p>
       </article>
@@ -31,11 +30,9 @@ export default {
   created: function(){
     let args = {
       route: 'posts',
-      filters:{
-        per_page: 3
-      }
+      filters:{},
     };
-    this.posts = this.$Get_Posts(args);
+    this.posts = this.$get_posts(args);
   }
 };
 </script>

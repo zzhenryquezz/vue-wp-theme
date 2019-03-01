@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{27:function(t,n,e){"use strict";e.r(n);var r=function(){var t=this.$createElement;return(this._self._c||t)("nav",{staticClass:"vue-theme-navmenu"})},i=[];r._withStripped=!0,e.d(n,"render",function(){return r}),e.d(n,"staticRenderFns",function(){return i})},28:function(t,n,e){"use strict";n.a={data:function(){return{}}}}});

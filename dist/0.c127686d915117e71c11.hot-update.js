@@ -1,0 +1,1 @@
+webpackHotUpdate(0,{28:function(t,e,n){"use strict";var a={data:function(){return{menu:[]}},created:function(){this.menu=this.get_menu_itens(),console.log(this.data.menu)}};e.a=a}});

@@ -48,7 +48,7 @@ componser install
 ```                
 new BrowserSyncPlugin({
 open: "external",
-host: "local.warrior",
+host: "type here your local domain",
 files: ["**/*.php", "src/**/**/.vue", "assets/css/*.css"],
 proxy: "local.warrior",
 reloadDelay: 0
@@ -66,7 +66,7 @@ npm start
 This theme came with a plugin that works look like the worpdress loop.
 Of couser still is not at the same level but with this you can get every data of the Wp Rest Api in any componet child of your project.
 
-You can use the loop without vue.js too, just get the file in wp-rest folder and include the file GetPosts.js in your progect. It is pure js so will work in the most of projects
+You can use the loop without vue.js too, just import the **index.js** file of wp-rest-loop folder in your progect. It is pure js so will work in the most of projects.
 
 But remenber to change  the variable 'siteName' of the file because if you don't get the data with the wordpress files you can't get the loop to worck, just change to 'http://yoursitename//wp-json/wp/v2/' and should resolve this issue.
 
@@ -74,8 +74,9 @@ But remenber to change  the variable 'siteName' of the file because if you don't
 Functions of Aplication:
 
 ### Plugin vue:
-* `this.$Get_Posts(args)`
-* `this.$Get_Thubnail(post)`
+* `this.$get_posts(args)`
+* `this.$get_thubnail(post)`
+* `this.$get_menu_itens()`
 
 ### Js Usage, remember to import the files.
 
@@ -86,99 +87,6 @@ Functions of Aplication:
 
 > The GetThubnail function must be used inside of a loop or with just one post object JSON
 
-## Examples of usage:
-
-### Loop of Posts
-1. Default Use
-```
-function myCustomDeafultLoop(){
-    let args = {
-        route: "posts",
-        filters: {
-        per_page: 5,
-        order: 'asc'
-    }
-    let posts = this.$Get_Posts(args);
-
-    <!-- see the results in console -->
-    console.log(posts);
-    };
-}
-```
-
-
-
-
-2. Using custom Endpoint:
-```     
-function myCustomEndpoint(){
-    let args = {}
-    let endipoint = '';
-    let posts = this.$Get_Posts(args, endipoint);
-
-    <!-- see the results in consol -->
-    console.log(posts);
-};
-```     
-
-### Get Thumbnail Funcion
-
-1 - Code, Examples used a .vue file
-
-```
-<template>
-  <main class="container">
-    <h2 class="">Main Home Page</h2>
-    <div class="entry-posts">
-      <article class="pd-2 post row" v-for="post in posts" v-bind:key="post.id" >
-        <h2 class="col-12">{{ post.title.rendered }}</h2>
-        <div class="entry-Thumbnail col-4">
-          <img class="background-image" v-bind:src="$Get_Thubnail(post)">
-        </div>
-        <p>{{ post.excerpt.rendered.replace(/<\/?[^>]+>/gi, '') }}</p>
-      </article>
-    </div>
-  </main>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      posts: []
-    };
-  },
-  methods:{},
-  created: function(){
-    let args = {
-      route: 'posts',
-      filters:{
-        per_page: 3
-      }
-    };
-    this.posts = this.$Get_Posts(args);
-  }
-};
-</script>
-
-```
-
-## Loop Args
-
-Parameter     | Value
-------------- | -------------
-route         | **string:** First parameter of endpost: __default:__ posts - [See All Parameter Routes](http://www.google.fr/)
-per_Page      | **int:** Number of Posts to receve
-
-## EndPoint
-This is how is moutend the endPoint of $GetPosts Loop
-```
-let endPoint = http://siteName/wp-json/v2/ + route + endline + filters;
-```
-So if you wnat you can ignore the filter and routes and use just the endline.
-
-The siteName json is get automaticly by the wp_localize_script();
-
 ## End Notices
 
 This a very early version and still have not complete and came have some bugs, but in the future i will update the repository and soon will be possible to use in true projects.
@@ -186,6 +94,8 @@ This a very early version and still have not complete and came have some bugs, b
 
 ## Deployment
 
+* version 1.0.2
+    * Still nothing
 * version 1.0.0
     * Still nothing
 
@@ -202,13 +112,13 @@ If you have some idea to make better some functionality of the theme or wanna ma
 
 ## Versioning
 
-* Version 1.0.1 - add $Get_Thubnail function
-
-  * Version 1.0.0 - release
+* Version 1.0.1     - add $get_menu_itens function
+  * Version 1.0.1   - add $get_thubnail function
+  * Version 1.0.0   - release
 
 ## Authors
 
-- **Henrique de Oliveira** - _Web Design_ - [Htron-dev](https://htron-dev.com)
+- **Henrique de Oliveira** - _Web Developer Wordpress_ - [Htron-dev](https://htron-dev.com)
 
 ## License
 

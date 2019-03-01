@@ -11,6 +11,9 @@ final class Init
   public static function get_services(){
     $classes =[
       core\Enqueue::class,
+      base\Theme_Support::class,
+      wp_rest_api\BaseControler::class,
+      wp_rest_api\NavMenu::class,
     ];
 
     return $classes;
