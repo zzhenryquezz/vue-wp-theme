@@ -1,5 +1,5 @@
 <template>
-  <footer class="container-fluid background-black text-center">
+  <footer id="showcase-reactive-footer" class="container-fluid background-black text-center">
     <h1 class="text-white">Footer</h1>
 
   </footer>

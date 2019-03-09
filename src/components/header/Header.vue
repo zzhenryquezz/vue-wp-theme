@@ -1,8 +1,8 @@
 <template>
-  <header class="container-fluid text-center background-green pt-2 pb-2">
-    <h1 class="text-white mt-0">{{ title }}</h1>
-    <h2 class="text-white">{{ description }}</h2>
+  <header id="showcase-reactive-header" class="container-fluid">
     <NavMenu></NavMenu>
+    <h1 class="text-center">{{ title }}</h1>
+    <h2 class="text-center">{{ description }}</h2>
   </header>
 </template>
 
