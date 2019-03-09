@@ -6,8 +6,22 @@
 */
 
 import Config from "./Config";
+import {SetRequest} from "./Request";
 
-const GetMenu = (menuLocation = 'menu') => {
+const methods = new SetRequest;
+
+const GetMenu = (menuLocation = "primary") => {
+  let args = {
+    url: Config.get_theme_endPoint(),
+    route: `${menuLocation}/itens`
+  }
+  methods.set_endpoint(args);
+
+  return methods.request_object(methods.endPoint).then((res) => {return JSON.parse(res)}); 
+}
+
+export default GetMenu;
+const GetMenuOld = (menuLocation = 'menu') => {
 
   let menuItens = [];
 
@@ -41,4 +55,4 @@ const GetMenu = (menuLocation = 'menu') => {
 
 };
 
-export default GetMenu;
+

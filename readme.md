@@ -11,19 +11,20 @@ This is a Theme Worpress compatible with vue.js
 4. Loop Wordpress in js
 5. Vue js Global function loop worpdress
 
-## Getting Started
+## Prerequisites
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+The package.json will get all dependecies necessaries for the ap to work, but you need some packs installed globaly to all featureds works.
 
 1 - To the autload works you have to install the Browersinc Globaly in your machine.
 
 ```
 npm i -g browersync
 ```
+## Getting Started
+
+Acess the wiki of project to lern all featureds:
+>Wiki of the Repository : [Click Here](https://github.com/zzhenryquezz/vue-wp-theme/wiki)
+
 
 ### Installing
 
@@ -70,13 +71,15 @@ You can use the loop without vue.js too, just import the **index.js** file of wp
 
 But remenber to change  the variable 'siteName' of the file because if you don't get the data with the wordpress files you can't get the loop to worck, just change to 'http://yoursitename//wp-json/wp/v2/' and should resolve this issue.
 
+> See wiki to more details.
 
 Functions of Aplication:
 
-### Plugin vue:
+### Vue Plugin: wp-rest-loop:
 * `this.$get_posts(args)`
 * `this.$get_thubnail(post)`
-* `this.$get_menu_itens()`
+* `this.$get_menu_itens(menulocation)`
+  * still not ready just have 1 position
 
 ### Js Usage, remember to import the files.
 
@@ -85,19 +88,17 @@ Functions of Aplication:
 
 ### Notes:
 
-> The GetThubnail function must be used inside of a loop or with just one post object JSON
+> The GetThubnail function must have a post object to get Acess to ID of featured_media
 
 ## End Notices
 
-This a very early version and still have not complete and came have some bugs, but in the future i will update the repository and soon will be possible to use in true projects.
+This a very early version and still have not complete and could have some bugs, but in the future i will update the repository and soon will be possible to use in true projects.
 
 
 ## Deployment
 
-* version 1.0.2
-    * Still nothing
 * version 1.0.0
-    * Still nothing
+    * Realese
 
 ## Build With
 
@@ -112,7 +113,8 @@ If you have some idea to make better some functionality of the theme or wanna ma
 
 ## Versioning
 
-* Version 1.0.1     - add $get_menu_itens function
+* Version 1.0.2     - fixed async functions requests
+  * Version 1.0.1     - add $get_menu_itens function
   * Version 1.0.1   - add $get_thubnail function
   * Version 1.0.0   - release
 
@@ -122,7 +124,7 @@ If you have some idea to make better some functionality of the theme or wanna ma
 
 ## License
 
-This project is licensed under the GPL License - see the [LICENSE.md](/LICENSE.md) file for details
+This project is licensed under the GPL License - see the [LICENSE.md](https://github.com/zzhenryquezz/vue-wp-theme/blob/master/LICENCE.md) file for details
 
 ## Acknowledgments
 

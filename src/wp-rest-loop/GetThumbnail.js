@@ -7,59 +7,62 @@
 */
 
 import Config from "./Config";
+import {SetRequest} from "./Request";
 
-const GetThumbnail = ( post = {}, size = 'full') => {
-  // var Declatations
-  let siteJSON = Config.get_EndPoint();
-  let thubnail_src = '';
-  let featured = post.featured_media;
+class getThumbnail
+{
 
-  // Debug Messages
-  if(featured == 0 || featured == undefined){
+  constructor() {
+    this.siteName = Config.get_EndPoint();
+    this.methods = new SetRequest;
+  }
+  set_args(post){
+    let args = {
+      route: `media/${post.featured_media}`,
+    };
+    this.endPoint = this.siteName + 'media/' + post.featured_media;
+  }
+  
+  get_thumbnail(size, get){
+
+    return this.methods.request_object(this.endPoint); 
+    
+  }
+}
+
+const thumbnailClass = new getThumbnail;
+
+const GetThumbnail = (post, get = true, size = 'full') => {
+  thumbnailClass.set_args(post);
+
+  return thumbnailClass.get_thumbnail()
+  .then((response) => { 
+    let object = JSON.parse(response);
+    var output;
+    if(get){
+      output = object;
+      return output;
+    }
+    output = object.media_details.sizes[size].source_url;
+    return output;
+  });
+}
+
+const Hasthumbnail = (post) => {
+  if(post == undefined){
+    console.log('WP-REST: post object is obrigatory');
+    return false;
+  }
+  
+  let featuredID = post.featured_media;
+
+  if(featuredID == 0 || featuredID == undefined){
     if(Config.data.debug){
       console.warn('wp-loop: No Thumbnail or other issue');
     }
-    return;
+    return false;
   }
+  return true;
+}
 
-  let endPoint = siteJSON + 'media/' + featured;
-
-  /**
-   * Filter the Posts with the args
-   */
-  var ourRequest = new XMLHttpRequest();
-
-  ourRequest.open("GET", endPoint, false);
-  ourRequest.onload = function() {
-    if (ourRequest.status >= 200 && ourRequest.status < 400) {
-
-      var data = JSON.parse(ourRequest.responseText);
-      thubnail_src = data.media_details.sizes[size].source_url;
-
-    } else {
-      if(Config.data.debug){
-        console.log("We connected to the server, but it returned an error.");
-      }
-    }
-  };
-
-  ourRequest.onerror = function() {
-    if(Config.data.debug){
-      console.log("Connection error");
-    }
-  };
-
-  ourRequest.send();
-
-  let imgElement = document.createElement('img');
-  imgElement.setAttribute("src", thubnail_src )
-
-  return thubnail_src.toString();
-
-
-  /**
-   * Geting the Posts
-   */
-};
-
-export default GetThumbnail;
+export {GetThumbnail, Hasthumbnail};

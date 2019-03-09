@@ -7,7 +7,7 @@
 
 import Config from "./Config";
 
-class SetPosts 
+export class SetRequest 
 {
   
   constructor() {
@@ -15,9 +15,9 @@ class SetPosts
     this.endPoint = '';
   }
 
-  set_endpoint(args) {
+  set_endpoint(args, url) {
 
-    this.set_filters(args);
+    this.set_filters(args, url);
 
   }
 
@@ -25,23 +25,26 @@ class SetPosts
 
     let endPoint = this.siteName;
     
+    if (args.url !== undefined) {
+      endPoint = args.url;
+    }
+    
     if (args.route !== undefined) {
       endPoint += args.route;
     }
 
-    if(args.filters !== undefined){
-      Object.keys(args.filters).forEach( arg => {
+    if(args.var !== undefined){
+      Object.keys(args.var).forEach( arg => {
         if (arg !== undefined) {
-          endPoint += `?${arg}=${args.filters[arg]}`;
+          endPoint += `?${arg}=${args.var[arg]}`;
         }
       });
     }
-
     this.endPoint = endPoint;
 
   }
   
-  request_posts(url){
+  request_object(url){
     let promise = new Promise(function (resolve, reject) {
       var ourRequest = new XMLHttpRequest();
 
@@ -71,13 +74,11 @@ class SetPosts
 
 }
 
-const methods = new SetPosts;
+const methods = new SetRequest;
 
-const GetPosts = (args) => {
+export const Request = (args = {}) => {
   
   methods.set_endpoint(args);
 
-  return methods.request_posts(methods.endPoint).then((res) => {return JSON.parse(res)}); 
+  return methods.request_object(methods.endPoint).then((res) => {return JSON.parse(res)}); 
 }
-
-export default GetPosts;
